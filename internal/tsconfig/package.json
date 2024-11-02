@@ -1,0 +1,16 @@
+{
+  "name": "@repo/tsconfig",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "base.json",
+    "library.json",
+    "node.json",
+    "web-app.json",
+    "web.json"
+  ],
+  "devDependencies": {
+    "vite": "catalog:"
+  }
+}

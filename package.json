@@ -1,24 +1,65 @@
 {
+  "name": "with-changesets",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "turbo build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build",
+    "build:analyze": "turbo build:analyze",
+    "changeset": "pnpm exec changeset",
     "dev": "turbo dev",
-    "lint": "turbo lint",
+    "check": "pnpm run check:circular && pnpm run check:dep && pnpm run check:type && pnpm check:cspell",
+    "check:cspell": "cspell lint **/*.ts **/README.md .changeset/*.md --no-progress",
+    "check:type": "turbo run typecheck",
+    "postinstall": "pnpm -r run stub --if-present",
+    "preinstall": "npx only-allow pnpm",
     "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
+    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
     "release": "turbo build --filter=docs^... && changeset publish"
+
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "turbo": "^2.2.3"
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "@repo/tsconfig": "workspace:*",
+    "cross-env": "catalog:",
+    "cspell": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "rimraf": "catalog:",
+    "tailwindcss": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
   },
-  "packageManager": "pnpm@8.15.6",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.10.0",
+    "pnpm": ">=9.5.0"
   },
-  "name": "with-changesets"
+  "packageManager": "pnpm@9.12.3",
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "*"
+      }
+    }
+  },
+  "overrides": {
+    "@ctrl/tinycolor": "catalog:",
+    "clsx": "catalog:",
+    "pinia": "catalog:",
+    "vue": "catalog:"
+  },
+  "neverBuiltDependencies": [
+    "canvas",
+    "node-gyp"
+  ]
 }

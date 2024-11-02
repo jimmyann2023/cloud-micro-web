@@ -32,6 +32,7 @@
     "@repo/commitlint-config": "workspace:*",
     "@repo/eslint-config": "workspace:",
     "@repo/prettier-config": "workspace:*",
+    "@repo/stylelint-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@repo/vsh": "workspace:*",
     "cross-env": "catalog:",

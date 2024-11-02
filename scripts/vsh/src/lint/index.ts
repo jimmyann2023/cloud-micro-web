@@ -10,9 +10,9 @@ interface LintCommandOptions {
 
 async function runLint({ format }: LintCommandOptions) {
   if (format) {
-    // await execaCommand(`stylelint "**/*.{vue,css,less,scss}" --cache --fix`, {
-    //   stdio: 'inherit',
-    // });
+    await execaCommand(`stylelint "**/*.{vue,css,less,scss}" --cache --fix`, {
+      stdio: 'inherit',
+    });
     await execaCommand(`eslint . --cache --fix`, {
       stdio: 'inherit',
     });
@@ -28,9 +28,9 @@ async function runLint({ format }: LintCommandOptions) {
     execaCommand(`prettier . --ignore-unknown --check --cache`, {
       stdio: 'inherit',
     }),
-    // execaCommand(`stylelint "**/*.{vue,css,less.scss}" --cache`, {
-    //   stdio: 'inherit',
-    // }),
+    execaCommand(`stylelint "**/*.{vue,css,less.scss}" --cache`, {
+      stdio: 'inherit',
+    }),
   ]);
 }
 

@@ -12,6 +12,10 @@ try {
     consola.error(colors.red('Invalid command!'));
     process.exit(1);
   });
+
+  vsh.usage('vsh');
+  vsh.help();
+  vsh.parse();
 } catch (error) {
   consola.error(error);
   process.exit(1);

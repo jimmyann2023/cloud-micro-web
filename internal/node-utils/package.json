@@ -1,7 +1,8 @@
 {
   "name": "@repo/node-utils",
   "version": "1.0.0",
-  "private": true,  "type": "module",
+  "private": true,
+  "type": "module",
   "scripts": {
     "stub": "pnpm unbuild --stub"
   },

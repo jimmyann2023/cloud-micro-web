@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint';
+
 import { interopDefault } from '../util';
 
 export async function vue(): Promise<Linter.Config[]> {

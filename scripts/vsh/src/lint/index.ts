@@ -1,6 +1,7 @@
 import type { CAC } from 'cac';
 
 import { execaCommand } from '@repo/node-utils';
+
 interface LintCommandOptions {
   /**
    * Format lint problem.

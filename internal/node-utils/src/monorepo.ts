@@ -4,7 +4,6 @@ import {
   getPackages as getPackagesFunc,
   getPackagesSync as getPackagesSyncFunc,
 } from '@manypkg/get-packages';
-
 import { findUpSync } from 'find-up';
 
 /**

@@ -14,6 +14,7 @@
     "postinstall": "pnpm -r run stub --if-present",
     "preinstall": "npx only-allow pnpm",
     "clean": "turbo clean && rm -rf node_modules",
+    "commit": "czg",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
     "release": "turbo build --filter=docs^... && changeset publish"
@@ -25,6 +26,7 @@
     "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
+    "@repo/commitlint-config": "workspace:*",
     "@repo/eslint-config": "workspace:",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",

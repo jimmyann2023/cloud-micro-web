@@ -1,4 +1,4 @@
 // @ts-check
-import  {defineConfig} from "@repo/eslint-config";
+import { defineConfig } from '@repo/eslint-config';
 
-export default defineConfig()
+export default defineConfig();

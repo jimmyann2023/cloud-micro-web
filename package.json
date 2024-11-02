@@ -25,6 +25,8 @@
     "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
+    "@repo/eslint-config": "workspace:",
+    "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "cross-env": "catalog:",
     "cspell": "catalog:",

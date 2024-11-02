@@ -1,4 +1,5 @@
 export * from './fs';
+export * from './monorepo';
 export { toPosixPath } from './path';
 export type { Package } from '@manypkg/get-packages';
 export { default as colors } from 'chalk';

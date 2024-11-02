@@ -13,12 +13,14 @@
     "check:type": "turbo run typecheck",
     "postinstall": "pnpm -r run stub --if-present",
     "preinstall": "npx only-allow pnpm",
+    "prepare": "is-ci || husky",
+    "lint-staged": "catalog:",
     "clean": "turbo clean && rm -rf node_modules",
+    "reinstall": "pnpm clean --del-lock && pnpm install",
     "commit": "czg",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
     "release": "turbo build --filter=docs^... && changeset publish"
-
   },
   "devDependencies": {
     "@changesets/changelog-github": "catalog:",
@@ -34,6 +36,7 @@
     "cspell": "catalog:",
     "husky": "catalog:",
     "lint-staged": "catalog:",
+    "is-ci": "catalog:",
     "rimraf": "catalog:",
     "tailwindcss": "catalog:",
     "turbo": "catalog:",
